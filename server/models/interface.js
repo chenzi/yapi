@@ -155,11 +155,12 @@ class interfaceModel extends baseModel {
       .exec();
   }
 
-  checkRepeat(id, path, method) {
+  checkRepeat(id, path, method, tag) {
     return this.model.countDocuments({
       project_id: id,
       'query_path.path': path,
-      method: method
+      method: method,
+      tag:tag
     });
   }
 
